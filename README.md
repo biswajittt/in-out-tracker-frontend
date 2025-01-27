@@ -1,4 +1,4 @@
-# Attendance Tracker WIth Dashboard(WS)
+# InOut Tracker
 
 A web-based attendance tracker to manage daily check-ins and check-outs, designed for easy logging of working hours.
 Users can log in and log out with a single click.
