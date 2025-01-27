@@ -1,5 +1,14 @@
-import React from "react";
+import React from 'react'
+import Navbar from './Navbar/Navbar'
+import Herosection from './Hero Section/Herosection'
 
-export default function AdminDashboard() {
-  return <div>AdminDashboard</div>;
+function AdminDashboard() {
+  return (
+    <>
+    <Navbar/>
+    <Herosection/> 
+    </>
+  )
 }
+
+export default AdminDashboard

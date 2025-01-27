@@ -23,6 +23,7 @@ import Login from "./components/Auth/Login.jsx";
 import Registration from "./components/Auth/Registration.jsx";
 import { AuthProvider, useAuth } from "./context/AuthContext.jsx";
 import RedirectLoggedInUser from "./context/RedirectLoggedInUser.jsx";
+import AdminDashboard from "./components/Admin Dashboard/AdminDashboard.jsx";
 
 // Restrict access to pages for unauthenticated users
 const ProtectedRoute = () => {
