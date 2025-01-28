@@ -25,5 +25,3 @@ dist-ssr
 
 # Ignore specific firebase credentials file
 /src/firebase/firebaseConfig.js
-
-Calender
