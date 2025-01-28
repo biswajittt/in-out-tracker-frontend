@@ -1,4 +1,5 @@
 import React from "react";
+import GoogleCalendar from "../Calender/Calender";
 
 const users = [
   { id: 1, name: "John Doe", email: "john@example.com", checkIn: "9:00 AM", checkOut: "5:00 PM", status: "Active" },
@@ -8,6 +9,7 @@ const users = [
 
 function Herosection() {
   return (
+    <>
     <div className="mt-36 w-full p-3">
       <div className="overflow-x-auto">
         <table className="min-w-full border border-gray-400">
@@ -36,6 +38,9 @@ function Herosection() {
         </table>
       </div>
     </div>
+
+
+    </>
   );
 }
 
