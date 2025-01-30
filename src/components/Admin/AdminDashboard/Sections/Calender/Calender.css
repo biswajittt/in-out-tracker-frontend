@@ -1,0 +1,77 @@
+* {
+  box-sizing: border-box;
+}
+.fc-daygrid {
+  box-sizing: border-box;
+}
+.fc-toolbar-title {
+  color: #333f52;
+  font-weight: bolder;
+  font-size: small;
+}
+.fc-daygrid {
+  border-radius: 0.6rem;
+  background-color: #eaeef4;
+}
+.fc .fc-daygrid-day,
+.fc-scrollgrid {
+  border: none !important;
+  background-color: #eaeef4;
+}
+.fc .fc-scrollgrid {
+  border-radius: 2rem;
+}
+.fc-daygrid-day {
+  cursor: pointer;
+}
+
+.fc-day-today {
+  background-color: rgb(80, 191, 235) !important;
+
+}
+
+.fc-daygrid-day:hover {
+  background-color: #bbc4f4;
+  border-radius: 1rem;
+}
+.fc-daygrid-day-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  font-weight: bold;
+  color: blue;
+  font-size: 2.3vh;
+}
+.red-date {
+    background-color: lightcoral !important;
+    color: white !important;
+    font-weight: bold;
+  }
+  
+  .green-date {
+    background-color: yellowgreen !important;
+    color: black !important;
+    font-weight: bold;
+  }
+  
+  .yellow-date {
+    background-color: yellow !important;
+    color: black !important;
+    font-weight: bold;
+  }
+  
+.attendance-text {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: rgb(30, 32, 30);
+  text-align: center;
+}
+
+
+
+/* for popup bg color */
+.popup-list {
+  background: linear-gradient(155deg, #1c2025, #303740, #032e59, #1a1d21);
+}

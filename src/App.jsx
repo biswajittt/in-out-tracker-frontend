@@ -1,21 +1,21 @@
 import { useState, useEffect } from "react";
-import "./App.css";
-import Navbar from "./components/Navbar/Navbar";
-import Home from "./components/Home/Home";
+import { useSelector, useDispatch } from "react-redux"; // ✅ Import added
 import { Outlet } from "react-router-dom";
-import Herosection from "./components/Admin Dashboard/Hero Section/Herosection";
-import AdminDashboard from "./components/Admin Dashboard/AdminDashboard";
+import "./App.css";
+
+import Navbar from "./components/Navbar/Navbar";
+
 
 function App() {
   const activeCard = useSelector((state) => state.authCard.activeCard);
   console.log(activeCard);
+  
   const dispatch = useDispatch();
+
   return (
     <>
       <Navbar />
-
       <Outlet />
-
     </>
   );
 }

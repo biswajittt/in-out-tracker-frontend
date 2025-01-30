@@ -183,7 +183,7 @@ export default function Attendance() {
           <div className="container p-2 bg-slate-800 rounded-md">
             <div className="flex flex-row items-center">
               <div className="basis-1/4">
-                <div className="inline-block size-8 rounded-full ring-2 ring-white bg-indigo-500 text-white flex items-center justify-center font-bold">
+                <div className="size-8 rounded-full ring-2 ring-white bg-indigo-500 text-white flex items-center justify-center font-bold">
                   {`${currentUser?.email?.match(/[a-zA-Z]/)[0]}`}
                 </div>
               </div>
