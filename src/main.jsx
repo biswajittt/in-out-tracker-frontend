@@ -23,8 +23,15 @@ import Login from "./components/Auth/Login.jsx";
 import Registration from "./components/Auth/Registration.jsx";
 import { AuthProvider, useAuth } from "./context/AuthContext.jsx";
 import RedirectLoggedInUser from "./context/RedirectLoggedInUser.jsx";
-import AdminDashboard from "./components/Admin Dashboard/AdminDashboard.jsx";
-
+import AdminDashboard from "./components/Admin/AdminDashboard/AdminDashboard.jsx";
+import { Provider } from "react-redux";
+import store from "./redux/store";
+// import Login from "./components/Admin/Login/Login.jsx";
+// import Registration from "./components/Admin/Registration/Registration.jsx";
+import OrgLogin from "./components/Admin/Login/Login.jsx";
+import OrgRegistration from "./components/Admin/Registration/Registration.jsx";
+import AddEmployee from "./components/Admin/AdminDashboard/Sections/AddEmployee.jsx";
+import WorkingEmployees from "./components/Admin/AdminDashboard/Sections/WorkingEmployees.jsx";
 // Restrict access to pages for unauthenticated users
 const ProtectedRoute = () => {
   const { currentUser } = useAuth(); // Access the authentication context
@@ -59,6 +66,23 @@ const router = createBrowserRouter(
           </RedirectLoggedInUser>
         }
       />
+      {/* Wrap Org Login and Registration with RedirectLoggedInUser */}
+      <Route
+        path="org/login"
+        element={
+          <RedirectLoggedInUser>
+            <OrgLogin />
+          </RedirectLoggedInUser>
+        }
+      />
+      <Route
+        path="org/registration"
+        element={
+          <RedirectLoggedInUser>
+            <OrgRegistration />
+          </RedirectLoggedInUser>
+        }
+      />
       <Route element={<ProtectedRoute />}>
         <Route path="/attendance" element={<Attendance />} />
         <Route path="/history" element={<History />} />
@@ -66,13 +90,23 @@ const router = createBrowserRouter(
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/profile" element={<Profile />} />
       </Route>
+      {/* Admin dashboard */}
+      <Route path="admin/dashboard/" element={<AdminDashboard />}>
+        <Route path="" element={<AddEmployee />} />
+        <Route path="active-employees" element={<WorkingEmployees />} />
+      </Route>
       {/* 404 route */}
       <Route path="*" element={<NotFound />} />
     </Route>
   )
 );
-createRoot(document.getElementById("root")).render(
+const container = document.getElementById("root");
+const root = createRoot(container);
+
+root.render(
   <AuthProvider>
-    <RouterProvider router={router} />
+    <Provider store={store}>
+      <RouterProvider router={router} />
+    </Provider>
   </AuthProvider>
 );

@@ -8,9 +8,15 @@ import {
   MenuItem,
   MenuItems,
 } from "@headlessui/react";
+import { useDispatch } from "react-redux";
 import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
+import {
+  openOrgCard,
+  openUserCard,
+  closeCard,
+} from "../../redux/slices/authCardSlice.js";
 // import useAuth from "../../handler/useAuth";
 import { AuthProvider, useAuth } from "../../context/AuthContext.jsx";
 const navigation = [
@@ -25,6 +31,7 @@ function classNames(...classes) {
 }
 
 export default function Navbar() {
+  const dispatch = useDispatch();
   const { currentUser, logout } = useAuth(); // Get the currentUser and logout function from useAuth
   // const { isAuthenticated, setIsAuthenticated, user } = useAuth();
   const navigate = useNavigate();
@@ -116,18 +123,18 @@ export default function Navbar() {
               </>
             ) : (
               <>
-                <Link
-                  to="/registration"
-                  className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+                <div
+                  className="cursor-pointer rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+                  onClick={() => dispatch(openUserCard())}
                 >
-                  Registration
-                </Link>
-                <Link
-                  to="/login"
-                  className="ml-3 rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+                  Employees
+                </div>
+                <div
+                  className="cursor-pointer ml-3 rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+                  onClick={() => dispatch(openOrgCard())}
                 >
-                  Login
-                </Link>
+                  Organization
+                </div>
               </>
             )}
           </div>
