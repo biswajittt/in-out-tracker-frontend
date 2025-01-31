@@ -23,6 +23,8 @@
 }
 .fc-daygrid-day {
   cursor: pointer;
+  text-align: center; /* Center the text in the day cell */
+  vertical-align: middle;
 }
 
 .fc-day-today {
@@ -44,7 +46,7 @@
   color: blue;
   font-size: 2.3vh;
 }
-.red-date {
+/* .red-date {
     background-color: lightcoral !important;
     color: white !important;
     font-weight: bold;
@@ -60,7 +62,7 @@
     background-color: yellow !important;
     color: black !important;
     font-weight: bold;
-  }
+  } */
   
 .attendance-text {
   font-size: 1.2rem;
@@ -68,6 +70,28 @@
   color: rgb(30, 32, 30);
   text-align: center;
 }
+/* Calender.css */
+
+.fc-daygrid-day-number {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold; /* Make the text bold */
+}
+
+
+.fc-event-title {
+  font-weight: bold !important;
+  color: rgb(22, 22, 79) !important;
+font-size: large; }
+
+
+.fc-daygrid-day-number, .fc-event-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 
 
 

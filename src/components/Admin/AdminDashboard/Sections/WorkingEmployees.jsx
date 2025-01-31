@@ -9,52 +9,52 @@ const users = [
   { id: 2, name: "Jane Smith", email: "jane@example.com", checkIn: "10:00 AM", checkOut: "5:00 PM", status: "Active" ,stats:<Popup/>},
   { id: 3, name: "Alice Johnson", email: "alice@example.com", checkIn: "", checkOut: "", status: "InActive",stats:<Popup/>  },
 ];
-function timePrase(timeStr){
-  if(!timeStr){
-    return null
-  }
-  let [time,modifier]=timeStr.split(" ")
-  let [hours,minutes]=time.split(":").map(Number)
+// function timePrase(timeStr){
+//   if(!timeStr){
+//     return null
+//   }
+//   let [time,modifier]=timeStr.split(" ")
+//   let [hours,minutes]=time.split(":").map(Number)
 
-  if (modifier==='PM' && hours!==12){
-    hours+=12
-  }
-  else if(modifier==='AM' && hours===12){
-    hours =0
-  }
-  return hours*60+minutes
-}
+//   if (modifier==='PM' && hours!==12){
+//     hours+=12
+//   }
+//   else if(modifier==='AM' && hours===12){
+//     hours =0
+//   }
+//   return hours*60+minutes
+// }
 
-users.forEach((element) => {
-  let checkInTime=timePrase(element.checkIn)
-  let checkOutTime=timePrase(element.checkOut)
-  let startTime=timePrase('9:00 AM')
-  let endTime=timePrase('5:00 PM')
+// users.forEach((element) => {
+//   let checkInTime=timePrase(element.checkIn)
+//   let checkOutTime=timePrase(element.checkOut)
+//   let startTime=timePrase('9:00 AM')
+//   let endTime=timePrase('5:00 PM')
 
-  if(checkInTime===null ||checkOutTime===null){
-    console.log('red');
-    return
-  }
-  else if(checkInTime<=startTime && checkOutTime>=endTime){
-    console.log('green');
+//   if(checkInTime===null ||checkOutTime===null){
+//     console.log('red');
+//     return
+//   }
+//   else if(checkInTime<=startTime && checkOutTime>=endTime){
+//     console.log('green');
     
-  }
-  else if(checkInTime>startTime || checkOutTime<endTime){
-    console.log('yellow');
+//   }
+//   else if(checkInTime>startTime || checkOutTime<endTime){
+//     console.log('yellow');
     
-  }
-  else{
-    console.log('red');
+//   }
+//   else{
+//     console.log('red');
     
-  }
+//   }
 
-});
+// });
 function WorkingEmployees() {
   return (
 <div
   className="w-full p-3 h-screen"
   style={{
-    background: "linear-gradient(125deg, #1c2025, #303740, #011e3a, #1a1d21)"
+    background: "linear-gradient(135deg, #1a1d21, #303740, #011e3a, #1a1d21)"
   }}
 >
 
