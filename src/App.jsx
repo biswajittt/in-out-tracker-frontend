@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux"; // ✅ Import added
 import { Outlet } from "react-router-dom";
 import "./App.css";
-
+import LandingPage from "./LandingPage/LandingPage";
 import Navbar from "./components/Navbar/Navbar";
 
 
@@ -16,6 +16,7 @@ function App() {
     <>
       <Navbar />
       <Outlet />
+      <LandingPage/>
     </>
   );
 }
