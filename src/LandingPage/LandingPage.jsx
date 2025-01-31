@@ -7,7 +7,7 @@ function LandingPage() {
   const gsapRef = useRef([]);
   const [isRoot, setIsRoot] = useState(false);
 
-
+  // Storing refs for each text element
   gsapRef.current = [];
 
   const addToRefs = (el) => {
@@ -16,18 +16,17 @@ function LandingPage() {
     }
   };
 
-
+  // Check if the user is on the root URL
   useEffect(() => {
     if (window.location.pathname === '/') {
-      setIsRoot(true); 
+      setIsRoot(true); // Set to true if the user is on the root path
+    } else {
       setIsRoot(false); 
     }
   }, []);
 
   useEffect(() => {
     if (isRoot && gsapRef.current.length > 0) {
-      
-      // gsapeffects 
       let tl = gsap.timeline();
 
       tl.from(gsapRef.current, {
